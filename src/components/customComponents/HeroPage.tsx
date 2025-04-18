@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -17,6 +17,7 @@ interface ContentCard {
   duration: string
   seasons?: number
   genre: string
+  episodes?: number
 }
 
 export default function ContentDiscovery() {
@@ -44,12 +45,14 @@ export default function ContentDiscovery() {
     },
     {
       id: 3,
-      title: "Card Three",
+      title: "The Morning Show",
       image: "/placeholder.svg",
-      year: 2023,
-      rating: 8.9,
-      duration: "2h 45m",
-      genre: "Adventure"
+      year: 2021,
+      rating: 8.7,
+      duration: "2h 25m",
+      genre: "Drama",
+      episodes: 20,
+      seasons: 3
     },
     {
       id: 4,
@@ -93,10 +96,37 @@ export default function ContentDiscovery() {
     setActiveIndex(index)
   }
 
+  // Calculate position and rotation for cards
+  const calculateCardStyle = (index: number) => {
+    const isActive = index === activeIndex
+    const position = index - activeIndex
+    
+    if (isActive) {
+      return {
+        transform: 'translateX(0) scale(1.15)',
+        zIndex: 50,
+        opacity: 1
+      }
+    }
+    
+    // Calculate relative position and rotation
+    const xPosition = position * 120 // Horizontal offset
+    const rotationAngle = position * +15 // Rotation angle (negative for proper fan effect)
+    const scale = Math.max(0.7, 1 - Math.abs(position) * 0.15)
+    const zIndex = 40 - Math.abs(position) * 10
+    const opacity = Math.max(0.4, 1 - Math.abs(position) * 0.3)
+    
+    return {
+      transform: `translateX(${xPosition}px) rotate(${rotationAngle}deg) scale(${scale})`,
+      zIndex,
+      opacity
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-8">
       {/* Header */}
-      <header className="flex items-center justify-between mb-12">
+      <header className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-8">
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />
@@ -143,21 +173,27 @@ export default function ContentDiscovery() {
           </TabsList>
         </Tabs>
 
-        {/* Card Row */}
-        <div className="relative h-[600px] flex items-center justify-center">
-          <div className="flex gap-4 items-center">
+        {/* Card Carousel */}
+        <div className="relative h-[500px] flex items-center justify-center perspective">
+          <div className="relative w-full h-full flex items-center justify-center">
             {contentCards.map((card, index) => {
+              const style = calculateCardStyle(index)
               const isActive = index === activeIndex
 
               return (
                 <div
                   key={card.id}
                   className={cn(
-                    "transition-all duration-300 ease-out cursor-pointer",
-                    "rounded-xl overflow-hidden shadow-lg",
-                    "w-[180px] h-[320px]",
-                    isActive && "w-[220px] h-[380px]"
+                    "absolute transition-all duration-500 ease-out cursor-pointer",
+                    "rounded-xl overflow-hidden shadow-xl",
+                    "w-[280px] h-[400px]",
                   )}
+                  style={{
+                    transform: style.transform,
+                    zIndex: style.zIndex,
+                    opacity: style.opacity,
+                    transformOrigin: "center bottom"
+                  }}
                   onClick={() => handleCardClick(index)}
                 >
                   <div className="relative w-full h-full">
@@ -166,7 +202,7 @@ export default function ContentDiscovery() {
                       alt={card.title}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 180px, 220px"
+                      sizes="280px"
                     />
                     
                     {/* Card Content Overlay */}
@@ -186,6 +222,12 @@ export default function ContentDiscovery() {
                         <h3 className="text-white text-lg font-bold mb-1">{card.title}</h3>
                         <div className="flex items-center text-gray-300 text-xs gap-2 mb-1">
                           <span>{card.year}</span>
+                          {card.seasons && (
+                            <span>{card.seasons} Seasons</span>
+                          )}
+                          {card.episodes && (
+                            <span>{card.episodes} Episodes</span>
+                          )}
                         </div>
                         <span className="inline-block bg-black/30 text-white text-xs px-2 py-1 rounded-md">
                           {card.genre}
