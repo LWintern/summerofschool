@@ -74,7 +74,7 @@ export default function Testimonials() {
   )
 
   return (
-    <div className="w-full bg-gray-50 p-4 md:p-8">
+    <div className="w-full bg-black text-white p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Testimonials Section */}
         <div className="mb-16">
