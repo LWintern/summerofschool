@@ -18,7 +18,7 @@ interface ImageCard {
       {
         id: 1,
         name: "base-1",
-        src: "/flower.jpg",
+        src: "/assets/gallery/gallery/Asset_1[1].png",
         width: "w-[160px]",
         height: "h-[250px]",
         position: {
@@ -30,7 +30,7 @@ interface ImageCard {
       {
         id: 2,
         name: "base-2",
-        src: "/plant.jpg",
+        src: "/assets/gallery/gallery/DSC02498.JPG",
         width: "w-[160px]",
         height: "h-[180px]",
         position: {
@@ -42,7 +42,7 @@ interface ImageCard {
       {
         id: 3,
         name: "base-3",
-        src: "/chair.jpg",
+        src: "/assets/gallery/gallery/DSC02507.JPG",
         width: "w-[160px]",
         height: "h-[200px]",
         position: {

@@ -107,7 +107,7 @@ export default function ContentDiscovery() {
   return (
     <div className=" bg-gray-50 p-2 sm:p-4 md:p-8">
       {/* Header */}
-      <header className="flex items-center justify-between mb-4 md:mb-6">
+      {/* <header className="flex items-center justify-between mb-4 md:mb-6">
         <div className="flex items-center gap-4 md:gap-8">
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />
@@ -136,7 +136,7 @@ export default function ContentDiscovery() {
             <AvatarFallback>U</AvatarFallback>
           </Avatar>
         </div>
-      </header>
+      </header> */}
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-2 sm:px-4">

@@ -1,5 +1,5 @@
-import Hero from "@/components/customComponents/Hero/Hero";
-import Hero2 from "@/components/customComponents/Hero/Hero2";
+import Hero from "@/components/customComponents/Hero/Hero2";
+
 
 import Portfolio from "@/components/customComponents/AboutMentor";
 import ImageGallery from "@/components/customComponents/Gallery";
@@ -11,8 +11,8 @@ import Image from "next/image";
 export default function Home() {
   return (
    <>
-   {/* <Hero/> */}
-   <Hero2 />
+  
+   <Hero />
    <ContentDiscovery />
    <Testimonials />
    <Portfolio />
