@@ -118,10 +118,10 @@ const Hero2 = () => {
           <br />
           Training Program
         </h1>
-
+{/* 
         <div className="mt-8 inline-block bg-white text-black px-6 py-3 text-xl md:text-2xl">
           Open for BTech | MTech | BCA | MCA | BSc IT
-        </div>
+        </div> */}
 
         <div className="mt-8 flex flex-wrap gap-4">
           <a
@@ -132,37 +132,37 @@ const Hero2 = () => {
           </a>
           <a
             href="#"
-            className="bg-red-600 text-white rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
             Build Live Project
           </a>
           <a
             href="#"
-            className="bg-red-600 text-white rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+            className="bg-white text-black rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
             Get Internship (Project) Certificate
           </a>
           <a
             href="#"
-            className="bg-red-600 text-white rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
             Get Internship (Project) Certificate
           </a>
           <a
             href="#"
-            className="bg-red-600 text-white rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
             Get Internship (Project) Certificate
           </a>
           <a
             href="#"
-            className="bg-red-600 text-white rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
             Build Live Project
           </a>
           <a
             href="#"
-            className="bg-red-600 text-white rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
             Build Live Project
           </a>
