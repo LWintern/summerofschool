@@ -5,7 +5,7 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChevronLeft, ChevronRight, Play, Plus } from "lucide-react"
+import { ChevronLeft, ChevronRight, Play, Plus, Star } from "lucide-react"
 import { testimonials } from "../../../data/testimonials"
 
 export default function Testimonials() {
@@ -14,6 +14,9 @@ export default function Testimonials() {
   const [testimonialsPerPage, setTestimonialsPerPage] = useState(4)
   const totalTestimonials = testimonials.length
   const totalPages = Math.ceil(totalTestimonials / testimonialsPerPage)
+  
+  // Track expanded state for each testimonial
+  const [expandedTestimonials, setExpandedTestimonials] = useState<Record<string, boolean>>({})
 
   // Get current testimonials
   const indexOfLastTestimonial = currentPage * testimonialsPerPage
@@ -39,6 +42,14 @@ export default function Testimonials() {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+
+  // Toggle expanded state for a testimonial
+  const toggleExpanded = (id: string) => {
+    setExpandedTestimonials(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }))
+  }
 
   // Pagination handlers
   const handlePrevPage = () => {
@@ -76,6 +87,17 @@ export default function Testimonials() {
   return (
     <div className="w-full bg-black text-white p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
+        {/* Header with Google Reviews Button */}
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold">Customer Testimonials</h2>
+          <Button 
+            className="bg-white hover:bg-gray-100 text-black flex items-center gap-2 rounded-full px-4 py-2 text-sm"
+          >
+            <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+            Google Reviews
+          </Button>
+        </div>
+        
         {/* Testimonials Section */}
         <div className="mb-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -90,9 +112,20 @@ export default function Testimonials() {
                       {testimonial.header}
                     </div>
 
-                    <p className="text-gray-800 font-medium line-clamp-3">
-                      {testimonial.quote}
-                    </p>
+                    <div>
+                      <p className={cn(
+                        "text-gray-800 font-medium",
+                        expandedTestimonials[testimonial.id] ? "" : "line-clamp-3"
+                      )}>
+                        {testimonial.quote}
+                      </p>
+                      <button 
+                        onClick={() => toggleExpanded(testimonial.id.toString())}
+                        className="text-blue-600 text-sm font-medium mt-2 hover:underline"
+                      >
+                        {expandedTestimonials[testimonial.id] ? "Show Less" : "Read More"}
+                      </button>
+                    </div>
 
                     {testimonial.rating && (
                       <StarRating rating={testimonial.rating} />
