@@ -18,7 +18,7 @@ interface ImageCard {
       {
         id: 1,
         name: "base-1",
-        src: "/assets/gallery/gallery/Asset_1[1].png",
+        src: "/assets/gallery/Asset_1[1].png",
         width: "w-[160px]",
         height: "h-[250px]",
         position: {
@@ -30,7 +30,7 @@ interface ImageCard {
       {
         id: 2,
         name: "base-2",
-        src: "/assets/gallery/gallery/DSC02498.JPG",
+        src: "/assets/gallery/DSC02498.JPG",
         width: "w-[160px]",
         height: "h-[180px]",
         position: {
@@ -42,7 +42,7 @@ interface ImageCard {
       {
         id: 3,
         name: "base-3",
-        src: "/assets/gallery/gallery/DSC02507.JPG",
+        src: "/assets/gallery/DSC02507.JPG",
         width: "w-[160px]",
         height: "h-[200px]",
         position: {
@@ -54,7 +54,7 @@ interface ImageCard {
       {
         id: 4,
         name: "base-4",
-        src: "/abstract.jpg",
+        src: "/assets/gallery/DSC03396.JPG",
         width: "w-[160px]",
         height: "h-[220px]",
         position: {
@@ -66,7 +66,7 @@ interface ImageCard {
       {
         id: 5,
         name: "base-5",
-        src: "/nature.jpg",
+        src: "/assets/gallery/IMG_5477.JPG",
         width: "w-[160px]",
         height: "h-[190px]",
         position: {
@@ -78,7 +78,7 @@ interface ImageCard {
       {
         id: 6,
         name: "base-6",
-        src: "/urban.jpg",
+        src: "/assets/gallery/IMG_5691.JPG",
         width: "w-[160px]",
         height: "h-[230px]",
         position: {
@@ -91,7 +91,7 @@ interface ImageCard {
       {
         id: 7,
         name: "stack-2-1",
-        src: "/urban.jpg",
+        src: "/assets/gallery/IMG_5851.JPG",
         width: "w-[160px]",
         height: "h-[200px]",
         position: {
@@ -104,7 +104,7 @@ interface ImageCard {
       {
         id: 8,
         name: "stack-3-1",
-        src: "/urban.jpg",
+        src: "/assets/gallery/IMG_6034.JPG",
         width: "w-[160px]",
         height: "h-[200px]",
         position: {
@@ -118,7 +118,7 @@ interface ImageCard {
       {
         id: 9,
         name: "stack-1-1",
-        src: "/portrait.jpg",
+        src: "/assets/gallery/IMG_6227.JPG",
         width: "w-[160px]",
         height: "h-[220px]",
         position: {
@@ -131,7 +131,7 @@ interface ImageCard {
       {
         id: 10,
         name: "stack-4-1",
-        src: "/landscape.jpg",
+        src: "/assets/gallery/IMG_6421.JPG",
         width: "w-[160px]",
         height: "h-[180px]",
         position: {
@@ -144,7 +144,7 @@ interface ImageCard {
       {
         id: 11,
         name: "stack-5-1",
-        src: "/city.jpg",
+        src: "/assets/gallery/IMG_6431.JPG",
         width: "w-[160px]",
         height: "h-[210px]",
         position: {
@@ -158,7 +158,7 @@ interface ImageCard {
       {
         id: 12,
         name: "stack-2-2",
-        src: "/abstract2.jpg",
+        src: "/assets/gallery/IMG_6478 (1).JPG",
         width: "w-[160px]",
         height: "h-[190px]",
         position: {
@@ -171,7 +171,7 @@ interface ImageCard {
       {
         id: 13,
         name: "stack-4-2",
-        src: "/nature2.jpg",
+        src: "/assets/gallery/IMG_6557.JPG",
         width: "w-[160px]",
         height: "h-[170px]",
         position: {
@@ -185,7 +185,7 @@ interface ImageCard {
       {
         id: 14,
         name: "stack-3-2",
-        src: "/portrait2.jpg",
+        src: "/assets/gallery/IMG_6542.JPG",
         width: "w-[160px]",
         height: "h-[200px]",
         position: {
@@ -198,7 +198,7 @@ interface ImageCard {
       {
         id: 15,
         name: "stack-5-2",
-        src: "/urban2.jpg",
+        src: "/assets/gallery/Recovered_jpg_file(767).jpg",
         width: "w-[160px]",
         height: "h-[190px]",
         position: {

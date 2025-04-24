@@ -6,13 +6,11 @@ import { images } from "../../../data/gallery"
 
 export default function ImageGallery() {
   const [isMobile, setIsMobile] = useState(false)
-  const [windowWidth, setWindowWidth] = useState(0)
 
   // Handle window resize
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768)
-      setWindowWidth(window.innerWidth)
     }
 
     // Initial check
@@ -21,31 +19,6 @@ export default function ImageGallery() {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
-
-  // Adjust image positions based on screen size
-  const getResponsivePosition = (image: any) => {
-    if (isMobile) {
-      // Mobile layout adjustments
-      return {
-        bottom: `${parseInt(image.position.bottom) * 0.6}px`, // Scale down positions
-        left: `${parseInt(image.position.left) * 0.6}px`,
-        zIndex: image.position.zIndex,
-      }
-    }
-    return image.position
-  }
-
-  // Adjust image dimensions based on screen size
-  const getResponsiveSize = (width: string, height: string) => {
-    if (isMobile) {
-      // Scale down sizes for mobile
-      return {
-        width: `w-${parseInt(width.split('-')[1]) * 0.6}`,
-        height: `h-${parseInt(height.split('-')[1]) * 0.6}`,
-      }
-    }
-    return { width, height }
-  }
 
   return (
     <div className="min-h-screen bg-black text-white p-4 sm:p-6 md:p-8 lg:p-12">
@@ -63,71 +36,41 @@ export default function ImageGallery() {
         </div>
       </header>
 
-      {/* Image Stack Container */}
+      {/* Image Grid Container */}
       <div className="max-w-6xl mx-auto">
-        <div className="relative w-full overflow-x-auto scrollbar-hide">
-          <div className={`relative h-[400px] sm:h-[600px] md:h-[800px] 
-                          min-w-[320px] sm:min-w-[640px] md:min-w-[1080px]
-                          transition-all duration-300`}>
-            <div className="absolute inset-0 flex justify-center">
-              {images.map((image) => {
-                const responsivePosition = getResponsivePosition(image)
-                const { width, height } = getResponsiveSize(image.width, image.height)
-
-                return (
-                  <div
-                    key={image.id}
-                    className={`
-                      absolute rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden
-                      ${width} ${height}
-                      transition-all duration-300 ease-in-out
-                      hover:shadow-2xl
-                      transform hover:scale-[1.02]
-                    `}
-                    style={{
-                      bottom: responsivePosition.bottom,
-                      left: responsivePosition.left,
-                      zIndex: responsivePosition.zIndex,
-                      transform: `translateY(${image.position.stackOn ? '-5px' : '0'})`,
-                    }}
-                  >
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={image.src}
-                        alt={image.name}
-                        fill
-                        className="object-cover transition-transform duration-300 
-                                 hover:scale-105 bg-gray-800"
-                        sizes="(max-width: 768px) 100vw, 
-                               (max-width: 1200px) 50vw,
-                               33vw"
-                        priority={image.position.zIndex > 10} // Prioritize loading for top images
-                      />
-                      
-                      {/* Image Overlay */}
-                      <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 
-                                    transition-opacity duration-300">
-                        <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4
-                                      bg-gradient-to-t from-black/80 to-transparent">
-                          <p className="text-sm sm:text-base font-medium truncate">
-                            {image.name}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
+          {images.map((image) => (
+            <div
+              key={image.id}
+              className="relative aspect-square rounded-lg overflow-hidden group transition-all duration-300 
+                        hover:shadow-2xl transform hover:scale-105"
+            >
+              <Image
+                src={image.src}
+                alt={image.name}
+                fill
+                className="object-cover transition-transform duration-300 
+                         group-hover:scale-105 bg-gray-800"
+                sizes="(max-width: 768px) 50vw, 
+                       (max-width: 1200px) 33vw,
+                       20vw"
+              />
+              
+              {/* Image Overlay */}
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 
+                            transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-3
+                              bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-sm sm:text-base font-medium truncate">
+                    {image.name}
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
-        {/* Mobile Scroll Indicator */}
-        {isMobile && (
-          <div className="mt-4 text-center text-sm text-gray-400">
-            Scroll horizontally to view more images
-          </div>
-        )}
+      
       </div>
     </div>
   )
