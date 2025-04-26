@@ -19,7 +19,7 @@ interface FormData {
   query: string;
 }
 
-const Hero2 = () => {
+const InnerCourseHeroPage = () => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
@@ -110,7 +110,7 @@ const Hero2 = () => {
                 Training Program
               </h1>
               {/* COURSE CHIPS */}
-              <div className="mt-8 flex flex-wrap gap-4">
+              {/* <div className="mt-8 flex flex-wrap gap-4">
                 {courseData.map((course) => (
                   <Link
                     key={course.slug}
@@ -120,7 +120,7 @@ const Hero2 = () => {
                     {course.title}
                   </Link>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
           {/* Right section - Contact form */}
@@ -214,4 +214,4 @@ const Hero2 = () => {
   );
 };
 
-export default Hero2;
+export default InnerCourseHeroPage;
