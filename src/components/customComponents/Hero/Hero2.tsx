@@ -128,37 +128,37 @@ const Hero2 = () => {
             href="#"
             className="bg-white text-black rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
-            No Prior Knowledge Required
+            Linux Security, Networking & Open Source 
           </a>
           <a
             href="#"
             className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
-            Build Live Project
+            Problem Solving with Python Programming & Data Structures
           </a>
           <a
             href="#"
             className="bg-white text-black rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
-            Get Internship (Project) Certificate
+            MongoDB for Modern Applications
           </a>
           <a
             href="#"
             className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
-            Get Internship (Project) Certificate
+           Flutter Mobile APP Development
           </a>
           <a
             href="#"
             className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
-            Get Internship (Project) Certificate
+            Enterprise Cloud Computing with AWS
           </a>
           <a
             href="#"
             className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
-            Build Live Project
+           Machine Learning & Deep Learning for Real-World Intelligence
           </a>
           <a
             href="#"
