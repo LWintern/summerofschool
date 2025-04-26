@@ -108,48 +108,70 @@ const Hero2 = () => {
       ></div>
       
       <div className="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10">
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Left section - Internship details */}
-          <div className="w-full md:w-3/5 space-y-6">
-            <div className="text-white">
-              <p className="text-xl mb-2">Exclusively for Engineering Students</p>
-              <h1 className="text-red-600 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                Summer Internship
-                <br />
-                Industrial Training
-                <br />
-                Program
-              </h1>
-              
-              <div className="mt-8 inline-block bg-white text-black px-6 py-3 text-xl md:text-2xl">
-                Open for BTech | MTech | BCA | MCA | BSc IT
-              </div>
-              
-              <div className="mt-8 flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-black border border-red-600 rounded px-4 py-2">
-                  <div className="w-4 h-4 bg-red-600 rounded-full flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                  <span>No Prior Knowledge Required</span>
-                </div>
-                
-                <div className="flex items-center gap-2 bg-black border border-red-600 rounded px-4 py-2">
-                  <div className="w-4 h-4 bg-red-600 rounded-full flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                  <span>Build Live Project</span>
-                </div>
-                
-                <div className="flex items-center gap-2 bg-black border border-red-600 rounded px-4 py-2">
-                  <div className="w-4 h-4 bg-red-600 rounded-full flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                  <span>Get Internship (Project) Certificate</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
+  <div className="flex flex-col md:flex-row gap-8">
+    {/* Left section - Internship details */}
+    <div className="w-full md:w-3/5 space-y-6">
+      <div className="text-white">
+        <p className="text-xl mb-2">Exclusively for Engineering Students</p>
+        <h1 className="text-red-600 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          Summer Industrial
+          <br />
+          Training Program
+        </h1>
+{/* 
+        <div className="mt-8 inline-block bg-white text-black px-6 py-3 text-xl md:text-2xl">
+          Open for BTech | MTech | BCA | MCA | BSc IT
+        </div> */}
+
+        <div className="mt-8 flex flex-wrap gap-4">
+          <a
+            href="#"
+            className="bg-white text-black rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+          >
+            Linux Security, Networking & Open Source 
+          </a>
+          <a
+            href="#"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+          >
+            Problem Solving with Python Programming & Data Structures
+          </a>
+          <a
+            href="#"
+            className="bg-white text-black rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+          >
+            MongoDB for Modern Applications
+          </a>
+          <a
+            href="#"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+          >
+           Flutter Mobile APP Development
+          </a>
+          <a
+            href="#"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+          >
+            Enterprise Cloud Computing with AWS
+          </a>
+          <a
+            href="#"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+          >
+           Machine Learning & Deep Learning for Real-World Intelligence
+          </a>
+          <a
+            href="#"
+            className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
+          >
+            Build Live Project
+          </a>
+        </div>
+      </div>
+    </div>
+  
+
+
           {/* Right section - Contact form */}
           <div className="w-full md:w-2/5">
             <div className="bg-transparent border-2 border-white p-8 rounded">
