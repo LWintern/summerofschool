@@ -330,75 +330,116 @@ export default function ImageGallery() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
+      setIsMobile(window.innerWidth < 640) // sm: 640px (Tailwind default)
     }
-
     handleResize()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white p-4 sm:p-6 md:p-80 lg:p-20 ">
-      <header className="max-w-6xl mx-auto mb-8 sm:mb-12 md:mb-16">
-        <div className="max-w-2xl -mb-80">
-          <h1 className="text-3xl lg:text-7xl md:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight">
+    <div className={
+      "min-h-screen bg-black text-white " +
+      (isMobile ? "p-2" : "p-4 sm:p-6 md:p-80 lg:p-20")
+    }>
+      <header className={
+        "mx-auto mb-6 " +
+        (isMobile ? "max-w-full" : "max-w-6xl mb-8 sm:mb-12 md:mb-16")
+      }>
+        <div className={isMobile ? "max-w-full mb-6" : "max-w-2xl -mb-80"}>
+          <h1 className={
+            isMobile
+              ? "text-2xl font-bold mb-3 leading-snug"
+              : "text-3xl lg:text-7xl md:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight"
+          }>
             No More Boring Stock Images
           </h1>
           <button 
-            className="bg-yellow-400 text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full 
-                     text-base sm:text-lg hover:bg-yellow-300 transition-all duration-300
-                     transform hover:scale-105 active:scale-95"
+            className={
+              "bg-yellow-400 text-black px-3 py-2 rounded-full text-base " +
+              "hover:bg-yellow-300 transition-all duration-300 " +
+              "transform hover:scale-105 active:scale-95 " +
+              (isMobile ? "w-full text-center" : "sm:px-6 sm:py-3 text-base sm:text-lg")
+            }
           >
             Browse Gallery
           </button>
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto overflow-hidden">
-        <div 
-          className="relative mx-auto" 
-          style={{ 
-            height: "800px",
-            maxWidth: "1000px" // Adjusted to fit 6 cards with gaps
-          }}
-        >
-          {images.map((image) => (
-            <div
-              key={image.id}
-              className="absolute rounded-lg overflow-hidden group 
-                       transition-all duration-300 hover:shadow-2xl hover:scale-105"
-              style={{
-                width: image.width,
-                height: image.height,
-                bottom: image.position.bottom,
-                left: image.position.left,
-                zIndex: image.position.zIndex,
-              }}
-            >
-              <div className="relative w-full h-full">
+      <main className={
+        "mx-auto overflow-hidden " +
+        (isMobile ? "max-w-full" : "max-w-6xl")
+      }>
+        {isMobile ? (
+          // MOBILE: 2-col grid
+          <div className="grid grid-cols-2 gap-3">
+            {images.map((image) => (
+              <div
+                key={image.id}
+                className="rounded-lg overflow-hidden group transition-all duration-300
+                hover:shadow-2xl hover:scale-[1.03] relative"
+                style={{
+                  width: '100%',
+                  // Use a fixed ratio for cards, e.g. 3:4
+                  aspectRatio: '3/4',
+                }}
+              >
                 <Image
                   src={image.src}
                   alt={image.name}
                   fill
                   className="object-cover"
-                  sizes="150px"
-                  priority={image.id <= 6} // Prioritize loading base cards
+                  sizes="(max-width: 640px) 50vw, 150px"
+                  priority={image.id <= 6}
                 />
-              </div>
-              
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 
-                            transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-3
-                              bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-sm sm:text-base font-medium truncate">
-                    {image.name}
-                  </p>
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 px-2 py-1 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-xs font-medium truncate">{image.name}</p>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          // DESKTOP/LG: Keep original absolute-position layout
+          <div
+            className="relative mx-auto"
+            style={{
+              height: "800px",
+              maxWidth: "1000px"
+            }}
+          >
+            {images.map((image) => (
+              <div
+                key={image.id}
+                className="absolute rounded-lg overflow-hidden group 
+                  transition-all duration-300 hover:shadow-2xl hover:scale-105"
+                style={{
+                  width: image.width,
+                  height: image.height,
+                  bottom: image.position.bottom,
+                  left: image.position.left,
+                  zIndex: image.position.zIndex,
+                }}
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={image.src}
+                    alt={image.name}
+                    fill
+                    className="object-cover"
+                    sizes="150px"
+                    priority={image.id <= 6}
+                  />
+                </div>
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-sm sm:text-base font-medium truncate">{image.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </main>
     </div>
   )
