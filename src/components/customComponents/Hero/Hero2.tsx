@@ -134,7 +134,7 @@ const Hero2 = () => {
             href="#"
             className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
-            Problem Solving with Python Programming & Data Structures
+             Python Programming & DS
           </a>
           <a
             href="#"
@@ -158,7 +158,7 @@ const Hero2 = () => {
             href="#"
             className="bg-white text-black  rounded-full px-6 py-3 text-sm md:text-base font-semibold hover:bg-red-700 transition duration-300"
           >
-           Machine Learning & Deep Learning for Real-World Intelligence
+           ML & DL for Real-World Intelligence
           </a>
           <a
             href="#"
