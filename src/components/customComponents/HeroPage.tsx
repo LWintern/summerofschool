@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -52,6 +53,7 @@ export default function ContentDiscovery() {
   const handleMouseEnter = () => setIsAutoPlaying(false);
   const handleMouseLeave = () => setIsAutoPlaying(true);
   
+  // Now this function only updates the active card but doesn't navigate
   const handleCardClick = (index: number) => {
     setActiveIndex(index);
     setIsAutoPlaying(false);
@@ -105,39 +107,7 @@ export default function ContentDiscovery() {
   }
 
   return (
-    <div className=" bg-gray-50 p-2 sm:p-4 md:p-8">
-      {/* Header */}
-      {/* <header className="flex items-center justify-between mb-4 md:mb-6">
-        <div className="flex items-center gap-4 md:gap-8">
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
-          </Button>
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-sm font-medium text-purple-600 border-b-2 border-purple-600 pb-1">
-              Home
-            </a>
-            <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-900">
-              Movies
-            </a>
-            <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-900">
-              TV Shows
-            </a>
-            <a href="#" className="text-sm font-medium text-gray-500 hover:text-gray-900">
-              Watchlist
-            </a>
-          </nav>
-        </div>
-        <div className="flex items-center gap-2 md:gap-4">
-          <Button variant="ghost" size="icon">
-            <Search className="h-5 w-5" />
-          </Button>
-          <Avatar className="h-8 w-8">
-            <AvatarImage src="/placeholder.svg" alt="User" />
-            <AvatarFallback>U</AvatarFallback>
-          </Avatar>
-        </div>
-      </header> */}
-
+    <div className="bg-gray-50 p-2 sm:p-4 md:p-8">
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-2 sm:px-4">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 md:mb-8">
@@ -203,7 +173,7 @@ export default function ContentDiscovery() {
               <div
                 key={card.id}
                 className={cn(
-                  "absolute transition-all duration-500 ease-out cursor-pointer",
+                  "absolute transition-all duration-500 ease-out",
                   "rounded-xl overflow-hidden shadow-xl",
                   "w-[180px] sm:w-[240px] md:w-[280px]",
                   "h-[270px] sm:h-[350px] md:h-[400px]"
@@ -211,44 +181,56 @@ export default function ContentDiscovery() {
                 style={calculateCardStyle(index)}
                 onClick={() => handleCardClick(index)}
               >
-                <div className="relative w-full h-full">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 180px, (max-width: 1024px) 240px, 280px"
-                  />
-                  
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-between p-2 sm:p-3 md:p-4">
-                    <div className="flex justify-between">
-                      <span className="bg-yellow-500 text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md">
-                        {card.rating.toFixed(1)}
-                      </span>
-                      <span className="bg-black/50 text-white text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md">
-                        {card.duration}
-                      </span>
-                    </div>
+                {/* This button wraps the card content and makes it clickable to go to detail page */}
+                <Button 
+                  asChild 
+                  variant="ghost" 
+                  className="p-0 h-full w-full block" 
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevents triggering the parent onClick
+                  }}
+                >
+                  <Link href={`/content/${card.id}`} className="relative w-full h-full block">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 180px, (max-width: 1024px) 240px, 280px"
+                      />
+                      
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-between p-2 sm:p-3 md:p-4">
+                        <div className="flex justify-between">
+                          <span className="bg-yellow-500 text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md">
+                            {card.rating.toFixed(1)}
+                          </span>
+                          <span className="bg-black/50 text-white text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md">
+                            {card.duration}
+                          </span>
+                        </div>
 
-                    <div>
-                      <h3 className="text-white text-sm sm:text-base md:text-lg font-bold mb-0.5 sm:mb-1 line-clamp-2">
-                        {card.title}
-                      </h3>
-                      <div className="flex items-center text-gray-300 text-[10px] sm:text-xs gap-1 sm:gap-2 mb-0.5 sm:mb-1">
-                        <span>{card.year}</span>
-                        {card.seasons && (
-                          <span>{card.seasons} Seasons</span>
-                        )}
-                        {card.episodes && (
-                          <span>{card.episodes} Episodes</span>
-                        )}
+                        <div>
+                          <h3 className="text-white text-sm sm:text-base md:text-lg font-bold mb-0.5 sm:mb-1 line-clamp-2">
+                            {card.title}
+                          </h3>
+                          <div className="flex items-center text-gray-300 text-[10px] sm:text-xs gap-1 sm:gap-2 mb-0.5 sm:mb-1">
+                            <span>{card.year}</span>
+                            {card.seasons && (
+                              <span>{card.seasons} Seasons</span>
+                            )}
+                            {card.episodes && (
+                              <span>{card.episodes} Episodes</span>
+                            )}
+                          </div>
+                          <span className="inline-block bg-black/30 text-white text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md">
+                            {card.genre}
+                          </span>
+                        </div>
                       </div>
-                      <span className="inline-block bg-black/30 text-white text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md">
-                        {card.genre}
-                      </span>
                     </div>
-                  </div>
-                </div>
+                  </Link>
+                </Button>
               </div>
             ))}
           </div>
