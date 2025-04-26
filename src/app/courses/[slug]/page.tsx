@@ -23,7 +23,7 @@ export default function CourseSlugPage({ params }: { params: { slug: string } })
   return (
     <main>
       {/* Always show the hero/header */}
-      <InnerCourseHeroPage course={course} />
+      <InnerCourseHeroPage  />
 
       {/* Optional: Main heading and description below hero, or move this into InnerCourseHeroPage */}
       <div className="mt-6">
