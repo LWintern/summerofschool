@@ -1,5 +1,6 @@
 // /data/courseContent.ts
-import DockerImage from '@/assets/docker.png';
+// If your image is in a local assets folder
+const DockerImage = "/assets/docker.png";
 
 
 export const courseData = [

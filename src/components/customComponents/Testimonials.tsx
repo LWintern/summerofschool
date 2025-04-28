@@ -190,34 +190,28 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Medical Brunch Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
-            Plus 250 medical brunch
-          </h2>
-          <p className="text-2xl sm:text-3xl md:text-4xl font-bold">
-            all over the country!
-          </p>
-        </div>
+        {/* Medical Brunch Section - Improved */}
+        <div className="px-4 sm:px-8 mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
+              Plus 250 medical brunch
+            </h2>
+            <p className="text-2xl sm:text-3xl md:text-4xl font-bold">
+              all over the country!
+            </p>
+          </div>
 
-        {/* Circular Image Collage */}
-        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] mx-auto max-w-4xl">
-          {/* Make sure the image exists at this path in your public folder */}
-          <div className="relative w-full h-full rounded-lg overflow-hidden">
-            <Image 
-              src="/assets/Artboard 1.png" 
-              alt="Medical facility" 
-              fill 
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1024px"
-            />
-            {/* You can add a play button overlay here if this is supposed to be a video */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Button 
-                className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full w-16 h-16 flex items-center justify-center"
-              >
-                <Play className="h-8 w-8 text-white" />
-              </Button>
+          {/* Image container with adjusted diensions to prevent cropping */}
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-8">
+            <div className="relative aspect-video rounded-xl overflow-hidden">
+              <Image 
+                src="/assets/Artboard 1.png" 
+                alt="Medical brunch events nationwide" 
+                fill 
+                className="object-contain"
+                sizes="(max-width:740px) 90vw, (max-width: 1024px) 70vw, 900px"
+                priority
+              />
             </div>
           </div>
         </div>
