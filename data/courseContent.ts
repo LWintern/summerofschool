@@ -223,9 +223,9 @@ export const courseData = [
   },
 
   {
-    id: "python-programming-problem-solving",
-    slug: "problem-solving-with-python-programming-and-data-structures",
-    title: "Problem Solving with Python Programming & Data Structures",
+    id: "python-programming-data-structures",
+    slug: "python-programming-and-data-structures",
+    title: "Python Programming & DS",
     description: "Join. Learn. Solve problems. Crack tech interviews. Build strong logic, master coding rounds, and land the job. Real skills. Real problems. Real confidence. Code smart. Think sharp. Get hired.",
     imageSrc: DockerImage,
     time: "10:00 AM",
@@ -483,9 +483,10 @@ export const courseData = [
 // If your image is in a local assets folder
 
   {
-    id: "linux-security-networking-master",
-    slug: "linux-security-networking-open-source-mastery",
-    title: "Linux Security, Networking & Open Source Mastery",
+    id: "linux-security-master",
+    slug: "linux-security-mastery",
+    title: "Linux Security Mastery",
+
     subtitle: "Focused technical training for real-world server security and system integrity. A holistic track for mastering secure, networked Linux infrastructure. Industry-grade training for aspiring Linux engineers and cybersecurity professionals.",
     imageSrc: DockerImage,
     time: "10:00 AM",
@@ -716,8 +717,8 @@ export const courseData = [
 
   {
     id: "mongodb-modern-applications-no-sql",
-    slug: "mongodb-for-modern-applications-the-nosql-edge",
-    title: "MongoDB for Modern Applications: The NoSQL Edge",
+    slug: "mongodb-nosql-applications",
+    title: "MongoDB NoSQL Applications",
     subtitle: "Dive deep into NoSQL with real-time use cases, CRUD ops, and performance tuning in just 2 days. Learn to model, index, and query data like a pro — fast, flexible, and production-ready. Hands-on with real projects, replica sets, and best practices for high availability.",
     imageSrc: DockerImage,
     time: "10:00 AM",
@@ -1099,9 +1100,9 @@ export const courseData = [
   },
 
   {
-    id: "machine-learning-deep-learning-real-world-intelligence",
-    slug: "machine-learning-deep-learning-real-world-intelligence",
-    title: "Machine Learning & Deep Learning for Real-World Intelligence",
+    id: "ml-dl-real-world-intelligence",
+    slug: "ml-dl-real-world-intelligence",
+    title: "ML & DL for Real-World Intelligence",
     subtitle: "Master AI with real-world ML and Deep Learning tools using Python, TensorFlow, and Keras. Build, train, and deploy intelligent systems using scalable ML/DL frameworks. Learn to model smart applications with supervised learning, CNNs, and RNNs. Build AI solutions that learn, adapt, and scale from data to deployment.",
     imageSrc: DockerImage,
     time: "10:00 AM",
@@ -1241,9 +1242,9 @@ export const courseData = [
 ,
 
   {
-    id: "advanced-devops-tools-infrastructure-automation",
-    slug: "advanced-devops-tools-infrastructure-automation",
-    title: "Advanced DevOps Tools and Infrastructure Automation Training",
+    id: "advanced-devops-automation",
+    slug: "advanced-devops-automation",
+    title: "Advanced DevOps Automation",
     subtitle: "Build, Deploy, Automate, Monitor, and Scale Applications in Production Environments. Streamline Software Delivery with GitOps, Containerization, Configuration Management, and Real-Time Monitoring Workflows. Build Scalable, Automated Software Systems with Jenkins, Docker, Kubernetes, Argo CD, and Terraform.",
     imageSrc: DockerImage,
     time: "10:00 AM",
@@ -1582,7 +1583,7 @@ export const courseData = [
   {
     id: "generative-ai-agentic-ai-prompt-engineering",
     slug: "generative-ai-agentic-ai-prompt-engineering",
-    title: "Generative AI, Agentic AI & Prompt Engineering for Modern Intelligence",
+    title: "Agentic AI Systems",
     subtitle: "Master the next frontier of AI innovation with Generative Models, Autonomous Agents, and Prompt Crafting. Learn to build, operate, and scale AI systems that can create, reason, and act independently. Build Autonomous, Intelligent Systems with Cutting-Edge Generative Models, AI Agents, and Advanced Prompt Crafting.",
     imageSrc: DockerImage,
     time: "10:00 AM",
