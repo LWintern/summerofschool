@@ -1,5 +1,6 @@
 // /data/courseContent.ts
-import flutterImage from "../public/assets/docker.png";
+import DockerImage from '@/assets/docker.png';
+
 
 export const courseData = [
   {
@@ -7,7 +8,7 @@ export const courseData = [
     slug: "flutter-mobile-app-development",
     title: "Flutter Mobile APP Development",
     description: "Build beautiful, high-performance cross-platform apps with Flutter in just 6 Days.\nMaster UI design, API integration, Firebase, and deployment in just 6 Days.\nCreate stunning, scalable apps with Dart, Firebase, and real-world logic.",
-    imageSrc: flutterImage.src,
+    imageSrc: DockerImage,
     time: "10:00 AM",
     duration: "720", // Example total duration (in minutes)
     modules: [

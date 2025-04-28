@@ -2,7 +2,11 @@
 
 
 // /src/components/customComponents/CourseInnerPage/SingleCourseCard.tsx
-import mentorImage from "../../../../public/assets/mentor.jpeg";
+
+import mentorImage from '@/assets/gallery/mentor.jpeg';
+import Image from "next/image";
+
+
 import {
   Accordion,
   AccordionContent,
