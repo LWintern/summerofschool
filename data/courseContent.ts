@@ -1540,7 +1540,7 @@ export const courseData = [
               "Node Exporters",
               "PushGateway",
               "Pull vs Push Metrics Collection Model",
-              "Setting up Prometheus on Kubernetes"
+              "Setting up Prometheus on Kubernetes",
             ]
           },
           {
