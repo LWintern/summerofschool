@@ -1,9 +1,8 @@
 
 
 
-// /src/components/customComponents/CourseInnerPage/SingleCourseCard.tsx
 
-import mentorImage from '@/assets/gallery/mentor.jpeg';
+const mentorImage = "/assets/gallery/mentor.jpeg";
 import Image from "next/image";
 
 
@@ -53,7 +52,7 @@ export default function SingleCourseCard({ course }: Props) {
           {/* Mentor avatar */}
           <div className="flex-shrink-0 items-center">
             <img
-              src={mentorImage.src}
+              src={mentorImage}
               alt="Mentor"
               className="rounded-full ml-4 w-20 h-20 border-yellow-400 p-2"
             />
