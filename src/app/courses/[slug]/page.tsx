@@ -1,9 +1,4 @@
 
-
-
-
-
-
 // /src/app/courses/[slug]/page.tsx
 import InnerCourseHeroPage from "@/components/customComponents/CourseInnerPage/InnerCourseHeroPage";
 import { courseData } from "../../../../data/courseContent";
