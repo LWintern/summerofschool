@@ -20,7 +20,7 @@ interface Props {
 
 export default function SingleCourseCard({ course }: Props) {
   return (
-    <div className="max-w-3xl mx-auto shadow-lg rounded-xl border border-gray-200 bg-[#494F52] mt-10">
+    <div className="max-w-3xl mx-auto shadow-lg rounded-xl border border-gray-200  mt-10 bg-gradient-to-r from-[#520000] via-[#710000] via-[#a50000] to-[#ce0000]">
       <div className="p-6">
         <div className="flex w-full items-start gap-4">
           <div className="flex flex-col items-center">
