@@ -149,7 +149,7 @@ export default function DiscordCommunity() {
               community for lifetime
             </p>
             <a href="https://bit.ly/41nbzpy" target="_blank" className="pt-8 block">
-              <button className="bg-[#ffffff] text-black px-6 py-3 rounded-lg text-base sm:text-lg hover:shadow-white hover:shadow-md transition-all flex items-center font-bold justify-center mx-auto w-full sm:w-auto">
+              <button className="bg-[#ff0000] text-black px-6 py-3 rounded-lg text-base sm:text-lg hover:shadow-black hover:shadow-md transition-all flex items-center font-bold justify-center mx-auto w-full sm:w-auto">
                 Visit our Discord
                 <span className="ml-2">→</span>
               </button>
