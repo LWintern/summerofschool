@@ -89,7 +89,7 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         {/* Header with Google Reviews Button */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold">Customer Testimonials</h2>
+          <h2 className="text-xl sm:text-2xl font-bold">Testimonials</h2>
           <Button 
             className="bg-white hover:bg-gray-100 text-black flex items-center gap-2 rounded-full px-4 py-2 text-sm"
           >
