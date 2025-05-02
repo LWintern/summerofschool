@@ -142,7 +142,7 @@ export default function DiscordCommunity() {
           <div className="space-y-6 text-center sm:px-0 px-4">
             <h1 className="text-xl sm:text-2xl md:text-3xl text-black font-bold">
               Exclusive{" "}
-              <span className="text-[#ffffff] text-2xl sm:text-3xl font-bold">Discord Community</span>
+              <span className="text-[#ff0000] text-2xl sm:text-3xl font-bold">Discord Community</span>
             </h1>
             <p className="text-base sm:text-lg pb-4 text-black">
               Get 1:1 technical doubt support from our team & elite Discord
