@@ -26,9 +26,9 @@ interface ProfileData {
 
 // Sample data
 const profileData: ProfileData = {
-  name: "David Henderson",
-  bio: "I am a frontend-based product designer with a focus on web design, illustration, & visual development. I have a diverse range of experience having worked across various fields and industries.",
-  image: "/profile-image.jpg",
+  name: "Mr. Vimal Daga",
+  bio: "Mr. Vimal Daga, the driving force behind TGS, is on an exclusive India Tour, visiting cities across the country to re-invent technical training. His mission is not only to provide hands-on learning but to bring together industry expert interactions, real-world capstone projects, and valuable industry insights—all in one place. With a focus on practical knowledge and skill development, Mr. Daga is committed to transforming the educational landscape in India. Join him on this journey to elevate your technical expertise and career prospects.",
+  image: "/assets/mentor.jpeg",
   education: [
     {
       period: "2004 - 2007",

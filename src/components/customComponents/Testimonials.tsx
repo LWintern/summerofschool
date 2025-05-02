@@ -89,7 +89,7 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         {/* Header with Google Reviews Button */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold">Customer Testimonials</h2>
+          <h2 className="text-xl sm:text-2xl font-bold">Testimonials</h2>
           <Button 
             className="bg-white hover:bg-gray-100 text-black flex items-center gap-2 rounded-full px-4 py-2 text-sm"
           >
@@ -190,70 +190,29 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Medical Brunch Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
-            Plus 250 medical brunch
-          </h2>
-          <p className="text-2xl sm:text-3xl md:text-4xl font-bold">
-            all over the country!
-          </p>
-        </div>
+        {/* Medical Brunch Section - Improved */}
+        <div className="px-4 sm:px-8 mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
+              Plus 250 medical brunch
+            </h2>
+            <p className="text-2xl sm:text-3xl md:text-4xl font-bold">
+              all over the country!
+            </p>
+          </div>
 
-        {/* Circular Image Collage */}
-        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] mx-auto max-w-4xl">
-          {/* Center video */}
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                        w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] 
-                        rounded-full overflow-hidden z-20 border-4 border-white shadow-lg">
-            <div className="relative w-full h-full bg-blue-100">
+          {/* Image container with adjusted diensions to prevent cropping */}
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-8">
+            <div className="relative aspect-video rounded-xl overflow-hidden">
               <Image 
-                src="/placeholder.svg" 
-                alt="Medical facility" 
+                src="/assets/Artboard 1.png" 
+                alt="Medical brunch events nationwide" 
                 fill 
-                className="object-cover"
-                sizes="(max-width: 640px) 150px, (max-width: 768px) 200px, 250px"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-black/50 rounded-full p-2 sm:p-3">
-                  <Play className="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="white" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Dynamic circular images */}
-          {[
-            { position: 'left-[5%] top-[20%]', size: 'w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]' },
-            { position: 'right-[20%] top-[15%]', size: 'w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px]' },
-            { position: 'right-[65%] top-[45%]', size: 'w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px]' },
-            { position: 'right-[2%] top-[25%]', size: 'w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px]' },
-            // Add more positions as needed
-          ].map((item, index) => (
-            <div
-              key={index}
-              className={`absolute ${item.position} ${item.size} rounded-full overflow-hidden z-10 border-4 border-white shadow-md`}
-            >
-              <Image
-                src="/placeholder.svg"
-                alt={`Medical image ${index + 1}`}
-                fill
-                className="object-cover"
-                sizes={item.size}
+                className="object-contain"
+                sizes="(max-width:740px) 90vw, (max-width: 1024px) 70vw, 900px"
+                priority
               />
             </div>
-          ))}
-
-          {/* Action buttons */}
-          <div className="absolute left-[25%] top-[40%] bg-white rounded-full px-2 py-1 sm:px-3 sm:py-1.5 
-                        text-[10px] sm:text-xs font-medium shadow-md z-30 flex items-center cursor-pointer
-                        hover:shadow-lg transition-shadow duration-300">
-            <Plus className="h-2 w-2 sm:h-3 sm:w-3 mr-1" /> View All Services
-          </div>
-
-          <div className="absolute left-[35%] top-[20%] bg-white rounded-full p-1 sm:p-1.5 
-                        shadow-md z-30 cursor-pointer hover:shadow-lg transition-shadow duration-300">
-            <Plus className="h-3 w-3 sm:h-4 sm:w-4" />
           </div>
         </div>
       </div>

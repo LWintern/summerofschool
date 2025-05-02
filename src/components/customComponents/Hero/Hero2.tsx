@@ -87,7 +87,7 @@ const Hero2 = () => {
   };
 
   return (
-    <div className="w-full bg-black relative overflow-hidden">
+    <div className="w-full bg-gradient-to-r from-[#520000] via-[#710000] via-[#a50000] to-[#ce0000] relative overflow-hidden">
       {/* Background overlay */}
       <div
         className="absolute inset-0 bg-gradient-to-r from-red-950/30 to-black/95 z-0"
@@ -145,7 +145,7 @@ const Hero2 = () => {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   disabled={loading}
-                  className="bg-black text-white border-white placeholder:text-gray-400"
+                  className="bg-white text-black border-white placeholder:text-gray-400"
                 />
                 {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
 
@@ -156,7 +156,7 @@ const Hero2 = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   disabled={loading}
-                  className="bg-black text-white border-white placeholder:text-gray-400"
+                  className="bg-white text-black border-white placeholder:text-gray-400"
                 />
                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
 
@@ -168,19 +168,9 @@ const Hero2 = () => {
                   onChange={handleInputChange}
                   disabled={loading}
                   maxLength={10}
-                  className="bg-black text-white border-white placeholder:text-gray-400"
+                  className="bg-white text-black border-white placeholder:text-gray-400"
                 />
                 {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-
-                <Input
-                  type="text"
-                  name="college"
-                  placeholder="College Name"
-                  value={formData.college}
-                  onChange={handleInputChange}
-                  disabled={loading}
-                  className="bg-black text-white border-white placeholder:text-gray-400"
-                />
 
                 <Textarea
                   name="query"
@@ -188,7 +178,7 @@ const Hero2 = () => {
                   value={formData.query}
                   onChange={handleInputChange}
                   disabled={loading}
-                  className="bg-black text-white border-white placeholder:text-gray-400 min-h-[100px]"
+                  className="bg-white text-black border-white placeholder:text-gray-400 min-h-[100px]"
                 />
 
                 <Button
