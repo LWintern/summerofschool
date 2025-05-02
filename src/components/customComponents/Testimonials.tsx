@@ -85,17 +85,17 @@ export default function Testimonials() {
   )
 
   return (
-    <div className="w-full bg-black text-white p-4 md:p-8">
+    <div className="w-full bg-white text-black p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header with Google Reviews Button */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold">Testimonials</h2>
-          <Button 
+          <h2 className="text-xl sm:text-2xl font-bold ">Testimonials</h2>
+          {/* <Button 
             className="bg-white hover:bg-gray-100 text-black flex items-center gap-2 rounded-full px-4 py-2 text-sm"
           >
             <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
             Google Reviews
-          </Button>
+          </Button> */}
         </div>
         
         {/* Testimonials Section */}
@@ -104,7 +104,7 @@ export default function Testimonials() {
             {currentTestimonials.map((testimonial) => (
               <Card 
                 key={testimonial.id} 
-                className="bg-white rounded-lg overflow-hidden border-none shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="bg-black rounded-lg overflow-hidden border-none shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <CardContent className="p-4 sm:p-6">
                   <div className="space-y-4">
@@ -114,7 +114,7 @@ export default function Testimonials() {
 
                     <div>
                       <p className={cn(
-                        "text-gray-800 font-medium",
+                        "text-white font-medium",
                         expandedTestimonials[testimonial.id] ? "" : "line-clamp-3"
                       )}>
                         {testimonial.quote}
@@ -131,9 +131,9 @@ export default function Testimonials() {
                       <StarRating rating={testimonial.rating} />
                     )}
 
-                    <div className="text-5xl text-gray-300 font-serif">"</div>
+                    <div className="text-5xl text-white font-serif">"</div>
 
-                    <div className="flex items-center pt-4">
+                    <div className="flex items-center pt-4 text-white">
                       <div className="relative w-10 h-10 rounded-full overflow-hidden mr-3">
                         <Image
                           src={testimonial.avatar || "/placeholder.svg"}
@@ -144,8 +144,8 @@ export default function Testimonials() {
                         />
                       </div>
                       <div>
-                        <p className="font-medium text-sm">{testimonial.name}</p>
-                        <p className="text-gray-500 text-xs">{testimonial.role}</p>
+                        <p className="font-medium text-white text-sm">{testimonial.name}</p>
+                        <p className="text-white text-xs">{testimonial.role}</p>
                       </div>
                     </div>
                   </div>
