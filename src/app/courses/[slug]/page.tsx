@@ -8,6 +8,8 @@
 import InnerCourseHeroPage from "@/components/customComponents/CourseInnerPage/InnerCourseHeroPage";
 import { courseData } from "../../../../data/courseContent";
 import SingleCourseCard from "@/components/customComponents/CourseInnerPage/SingleCourseCard";
+import { Timeline } from "@/components/ui/timeline";
+import { TimelineDemo } from "@/components/customComponents/CourseInnerPage/Timeline";
 
 export default function CourseSlugPage({ params }: { params: { slug: string } }) {
   const course = courseData.find(c => c.slug === params.slug);
@@ -24,6 +26,7 @@ export default function CourseSlugPage({ params }: { params: { slug: string } })
     <main>
       {/* Always show the hero/header */}
       <InnerCourseHeroPage  />
+      <TimelineDemo />
 
       {/* Optional: Main heading and description below hero, or move this into InnerCourseHeroPage */}
       <div className="mt-6">
