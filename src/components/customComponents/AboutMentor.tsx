@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { Dribbble, Twitter, ArrowRight } from "lucide-react"
+import { useState, useEffect } from "react"
 
 // Data interfaces
 interface Education {
@@ -41,21 +42,38 @@ const profileData: ProfileData = {
       institution: "University of Texas"
     }
   ],
-  experience: [
-    // {
-    //   period: "2007 - 2017",
-    //   role: "Framer Designer & Developer",
-    //   company: "Redwood Systems"
-    // },
-    // {
-    //   period: "2017 - 2023",
-    //   role: "Front-End Developer",
-    //   company: "Larsen & Toubro"
-    // }
-  ]
+  experience: []
 }
 
 export default function Portfolio() {
+  const [position, setPosition] = useState(0);
+  
+  const companies = [
+    { name: 'Dell', logo: '🔵 Dell' },
+    { name: 'IBM', logo: '🔵 IBM' },
+    { name: 'Google', logo: '🔵 Google' },
+    { name: 'Infosys', logo: '🔵 Infosys' },
+    { name: 'Salesforce', logo: '🔵 Salesforce' },
+    { name: 'Razorpay', logo: '🔵 Razorpay' }
+  ];
+  
+  // Duplicate array to create seamless loop
+  const extendedCompanies = [...companies, ...companies];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPosition((prev) => {
+        // Reset position when we've moved far enough to show the duplicates
+        if (prev > companies.length * 100) {
+          return 0;
+        }
+        return prev + 0.5;
+      });
+    }, 30);
+    
+    return () => clearInterval(interval);
+  }, [companies.length]);
+
   return (
     <div className="min-h-screen bg-white p-4 sm:p-6 md:p-8 lg:p-12 text-white">
       <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 lg:space-y-10">
@@ -193,40 +211,32 @@ export default function Portfolio() {
     </div> */}
   </div>
           {/* Let's Work Together */}
-          <div className="bg-[#1A1A1A] rounded-xl sm:rounded-2xl p-6 sm:p-8 flex items-center 
-                         hover:bg-[#1E1E1E] transition-all duration-300 hover:scale-[1.02]">
-            <div className="space-y-2">
-              <span className="text-xl sm:text-2xl text-blue-400">✧</span>
-              <h3 className="text-xl sm:text-2xl font-medium leading-tight">
-                Let's<br />
-                <span className="text-blue-500">work together</span>.
-              </h3>
+          <div className="w-[600px] bg-[#1A1A1A] rounded-xl sm:rounded-2xl p-2 sm:p-4 flex flex-col gap-4 hover:bg-[#1E1E1E] transition-all duration-300 hover:scale-[1.02]">
+            <h4 className="font-medium mb-2 text-white text-center">
+              Companies benefited with his trainings & consultancy
+            </h4>
+
+            <div className="relative overflow-hidden h-6 w-[500px]">
+              <div 
+                className="flex items-center absolute"
+                style={{ 
+                  transform: `translateX(-${position}px)`,
+                  transition: 'transform 0.5s linear'
+                }}
+              >
+                {extendedCompanies.map((company, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-center justify-center mx-2 min-w-[100px]"
+                  >
+                    <div className="text-blue-500 font-bold text-sm">{company.logo}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Credentials */}
-          <div className="bg-[#1A1A1A] rounded-xl sm:rounded-2xl p-6 sm:p-8 space-y-4 sm:space-y-6 
-                         hover:bg-[#1E1E1E] transition-all duration-300 hover:scale-[1.02]">
-            <div className="h-6 sm:h-8">
-              <Image
-                src="/signature.png"
-                alt="Signature"
-                width={120}
-                height={32}
-                className="opacity-70"
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="space-y-1">
-                <div className="text-xs text-gray-400 font-medium">MORE ABOUT ME</div>
-                <div className="text-base sm:text-lg font-medium">Credentials</div>
-              </div>
-              <button className="w-8 sm:w-10 h-8 sm:h-10 bg-[#222222] rounded-full flex items-center justify-center 
-                               cursor-pointer hover:bg-[#2A2A2A] transition-all duration-300 hover:scale-110">
-                <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
-              </button>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>

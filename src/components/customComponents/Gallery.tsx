@@ -339,7 +339,7 @@ export default function ImageGallery() {
 
   return (
     <div className={
-      "min-h-screen bg-black text-white " +
+      "min-h-screen bg-white text-black " +
       (isMobile ? "p-2" : "p-4 sm:p-6 md:p-80 lg:p-20")
     }>
       <header className={
