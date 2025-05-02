@@ -103,7 +103,7 @@ export default function ContentDiscovery() {
           Discover Unlimited Content
         </h1>
         {/* Tabs */}
-        <div className="w-full mb-4 overflow-x-auto">
+        {/* <div className="w-full mb-4 overflow-x-auto">
           <Tabs 
             defaultValue="popular" 
             className="mb-4 md:mb-12 flex justify-center min-w-max"
@@ -134,7 +134,7 @@ export default function ContentDiscovery() {
               </TabsTrigger>
             </TabsList>
           </Tabs>
-        </div>
+        </div> */}
         {/* Carousel */}
         <div 
           className={cn(
