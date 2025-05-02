@@ -10,12 +10,12 @@ import EnhancedMedicalServices from "@/components/customComponents/Testimonials"
 import Image from 'next/image'
 
 // Example change:
-<Image
+{/* <Image
   src="/path/to/image.jpg"
   alt="description"
   width={500}
   height={300}
-/>
+/> */}
 
 
 
