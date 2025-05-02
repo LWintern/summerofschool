@@ -8,6 +8,7 @@ import Testimonials from "@/components/customComponents/Testimonials";
 import EnhancedMedicalServices from "@/components/customComponents/Testimonials";
 
 import Image from 'next/image'
+import DiscordCommunity from "@/components/customComponents/Discord/DiscordCommunity";
 
 // Example change:
 {/* <Image
@@ -27,7 +28,7 @@ export default function Home() {
    <ContentDiscovery />
    {/* <CourseCard /> */}
    <Testimonials />
-   <Portfolio />
+   <DiscordCommunity/>
    <ImageGallery />
    </>  );
 }
