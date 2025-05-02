@@ -16,6 +16,7 @@ export default function ContentDiscovery() {
   const [activeTab, setActiveTab] = useState("popular")
   const [activeIndex, setActiveIndex] = useState(3)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  
   const [isMobile, setIsMobile] = useState(false)
   const autoPlayDelay = 3000
 
