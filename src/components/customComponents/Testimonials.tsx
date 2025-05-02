@@ -205,7 +205,7 @@ export default function Testimonials() {
           <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-8">
             <div className="relative aspect-video rounded-xl overflow-hidden">
               <Image 
-                src="/assets/Artboard.png" 
+                src="/assets/Artboard 1.png" 
                 alt="Medical brunch events nationwide" 
                 fill 
                 className="object-contain"
